@@ -1,0 +1,90 @@
+{
+    "python": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 1.9582
+        },
+        "Standard-FT": {
+            "WT2_PPL": 37.9707,
+            "Target_Loss": 1.447
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 26.1903,
+            "Target_Loss": 1.5001
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 27.9078,
+            "Target_Loss": 1.4605
+        },
+        "LoRA": {
+            "WT2_PPL": 25.1487,
+            "Target_Loss": 1.5645
+        }
+    },
+    "legal": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 2.9302
+        },
+        "Standard-FT": {
+            "WT2_PPL": 31.5939,
+            "Target_Loss": 2.9258
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 25.6282,
+            "Target_Loss": 2.8629
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 27.0559,
+            "Target_Loss": 2.8951
+        },
+        "LoRA": {
+            "WT2_PPL": 24.8083,
+            "Target_Loss": 2.8532
+        }
+    },
+    "medical": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Accuracy": 0.49
+        },
+        "Standard-FT": {
+            "WT2_PPL": 84.796,
+            "Accuracy": 0.45
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 33.4462,
+            "Accuracy": 0.44
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 58.9573,
+            "Accuracy": 0.43
+        },
+        "LoRA": {
+            "WT2_PPL": 25.893,
+            "Accuracy": 0.49
+        }
+    },
+    "english_web": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 3.3209
+        },
+        "Standard-FT": {
+            "WT2_PPL": 26.8786,
+            "Target_Loss": 3.2356
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 25.7677,
+            "Target_Loss": 3.2518
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 25.8818,
+            "Target_Loss": 3.234
+        },
+        "LoRA": {
+            "WT2_PPL": 25.2826,
+            "Target_Loss": 3.2791
+        }
+    }
+}

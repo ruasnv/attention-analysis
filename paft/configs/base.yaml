@@ -1,0 +1,73 @@
+# ============================================================
+# base.yaml — Shared defaults for all PAFT experiments
+# Every method config inherits and may override these values.
+# Do not hardcode any of these values elsewhere in the codebase.
+# ============================================================
+
+experiment:
+  seed: 42
+  deterministic: true
+  log_level: INFO
+
+training:
+  optimizer: adamw
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  lr_schedule: linear                 # linear warmup then linear decay
+  warmup_ratio: 0.06                  # 6% of total steps
+  batch_size: 32
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  num_epochs: 5
+  eval_strategy: epoch               # evaluate at end of each epoch
+  save_strategy: epoch               # checkpoint at end of each epoch
+  save_best: true                    # also save checkpoint at best val loss
+  best_metric: validation_loss
+  fp16: true
+
+data:
+  max_seq_length: 512
+  num_workers: 4
+  pin_memory: true
+
+checkpointing:
+  save_init: true                    # save full decomposition before any training
+  save_per_epoch: true
+  save_final: true
+  validate_schema: true              # raise error if any required tensor is missing
+  tensors:
+    init:
+      - pretrained_weights
+      - Q_V_all
+      - Q_O_all
+      - S_V_init_all
+      - S_O_init_all
+      - sigma_V_all
+      - sigma_O_all
+      - eigenvectors_all
+    per_epoch:
+      - adapted_weights
+      - S_V_all_layers
+      - S_O_all_layers
+      - lambda_V
+      - lambda_O
+      - training_loss
+      - validation_metrics
+      - gradient_norms
+    final:
+      - delta_S_V
+      - delta_S_O
+      - delta_lambda_V
+      - delta_lambda_O
+      - rotation_drift_V
+      - rotation_drift_O
+      - geometry_ratio
+      - OV_composed_init
+      - OV_composed_final
+      - attention_patterns_sample
+
+logging:
+  log_loss_every_n_steps: 10
+  log_drift_every_n_steps: 100       # rotation drift is more expensive to compute
+  log_eigenvalue_variance: true
+  log_effective_rank: true

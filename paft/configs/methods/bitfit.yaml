@@ -1,0 +1,46 @@
+# ============================================================
+# methods/baselines/bitfit.yaml
+# Bias-terms fine-tuning only.
+# All weight matrices frozen, all bias vectors trainable.
+# Reference: Ben-Zaken et al. 2022.
+# ============================================================
+
+extends: base
+
+method:
+  name: bitfit
+  description: >
+    Only bias terms are trained. All weight matrices are frozen.
+    Serves as the lightweight distributional adaptation baseline —
+    directly comparable to the bias component of safe-PAFT variants.
+    Isolates the contribution of bias tuning when used alongside
+    safe-PAFT results.
+
+  decompose: false
+
+  freeze:
+    Q_V: true
+    Q_O: true
+    W_Q: true
+    W_K: true
+    W_V: true
+    W_O: true
+    mlp_weights: true
+    mlp_biases: false               # TRAINABLE
+    attention_biases: false         # TRAINABLE
+    layernorm_weight: true
+    layernorm_bias: false           # TRAINABLE
+    embedding: true
+
+  tune:
+    mlp_biases: true
+    attention_biases: true
+    layernorm_bias: true
+
+  paft_specific:
+    constrain_S_symmetric: false
+    freeze_eigenvectors: false
+    rotation_drift_penalty: null
+    track_rotation_drift: false
+
+  approximate_trainable_params: 50_000    # GPT-2 small bias terms only

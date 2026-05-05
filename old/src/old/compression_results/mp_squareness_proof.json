@@ -1,0 +1,218 @@
+{
+  "L00_W_v": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 2.140244467037359,
+    "n_large_outliers": 130,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L00_W_q": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 8.318102252248021,
+    "n_large_outliers": 167,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L00_W_o": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 1.3785053457650407,
+    "n_large_outliers": 276,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L01_W_v": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 3.70824708453661,
+    "n_large_outliers": 160,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L01_W_q": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 3.4846663318812925,
+    "n_large_outliers": 263,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L01_W_o": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 2.661093161839067,
+    "n_large_outliers": 201,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L02_W_v": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 3.9293546049634367,
+    "n_large_outliers": 144,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L02_W_q": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 5.746463084986837,
+    "n_large_outliers": 198,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L02_W_o": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 2.7059329768864075,
+    "n_large_outliers": 179,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L11_W_v": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 6.18344615465532,
+    "n_large_outliers": 138,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L11_W_q": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 3.640676085743549,
+    "n_large_outliers": 160,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L11_W_o": {
+    "shape": [
+      768,
+      768
+    ],
+    "is_square": true,
+    "lower_emp": 0.0,
+    "upper_emp": 6.780915380458997,
+    "n_large_outliers": 62,
+    "n_small_outliers": 0,
+    "topk_equals_mp": true
+  },
+  "L00_MLP_c_fc": {
+    "shape": [
+      768,
+      3072
+    ],
+    "is_square": false,
+    "lower_emp": 6.857574522203805,
+    "upper_emp": 20.572723566611415,
+    "n_large_outliers": 2,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  },
+  "L00_MLP_c_proj": {
+    "shape": [
+      3072,
+      768
+    ],
+    "is_square": false,
+    "lower_emp": 4.253477972773437,
+    "upper_emp": 12.760433918320311,
+    "n_large_outliers": 7,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  },
+  "L05_MLP_c_fc": {
+    "shape": [
+      768,
+      3072
+    ],
+    "is_square": false,
+    "lower_emp": 5.8727058349295955,
+    "upper_emp": 17.618117504788785,
+    "n_large_outliers": 3,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  },
+  "L05_MLP_c_proj": {
+    "shape": [
+      3072,
+      768
+    ],
+    "is_square": false,
+    "lower_emp": 4.531706128606372,
+    "upper_emp": 13.595118385819115,
+    "n_large_outliers": 3,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  },
+  "L11_MLP_c_fc": {
+    "shape": [
+      768,
+      3072
+    ],
+    "is_square": false,
+    "lower_emp": 5.999995997902799,
+    "upper_emp": 17.999987993708395,
+    "n_large_outliers": 4,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  },
+  "L11_MLP_c_proj": {
+    "shape": [
+      3072,
+      768
+    ],
+    "is_square": false,
+    "lower_emp": 9.632779691620085,
+    "upper_emp": 28.898339074860253,
+    "n_large_outliers": 3,
+    "n_small_outliers": 384,
+    "topk_equals_mp": false
+  }
+}

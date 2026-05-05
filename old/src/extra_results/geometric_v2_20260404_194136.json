@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "timestamp": "20260404_194136",
+    "device": "cuda",
+    "sections": [
+      "G"
+    ]
+  },
+  "baseline": {
+    "wt2_ppl": 24.3561,
+    "lambada_ppl": 17.558,
+    "lambada_acc": 46.67
+  },
+  "G": {
+    "L8-L11 (late, near-zero cost)": {
+      "layers_replaced": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "wt2_ppl": 72.6532,
+      "wt2_delta_pct": 198.3,
+      "lambada_ppl": 158.2423,
+      "lambada_delta_pct": 801.3,
+      "lambada_acc": 28.43
+    },
+    "L0+L8-L11": {
+      "layers_replaced": [
+        0,
+        8,
+        9,
+        10,
+        11
+      ],
+      "wt2_ppl": 121.243,
+      "wt2_delta_pct": 397.8,
+      "lambada_ppl": 142.7662,
+      "lambada_delta_pct": 713.1,
+      "lambada_acc": 30.49
+    },
+    "L0-L3 (early)": {
+      "layers_replaced": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "wt2_ppl": 665.8533,
+      "wt2_delta_pct": 2633.8,
+      "lambada_ppl": 1435.6812,
+      "lambada_delta_pct": 8076.8,
+      "lambada_acc": 12.69
+    },
+    "L0-L7 (first half)": {
+      "layers_replaced": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "wt2_ppl": 2457.0241,
+      "wt2_delta_pct": 9987.9,
+      "lambada_ppl": 14701.6892,
+      "lambada_delta_pct": 83632.1,
+      "lambada_acc": 2.91
+    },
+    "all L0-L11": {
+      "layers_replaced": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "wt2_ppl": 7493.0334,
+      "wt2_delta_pct": 30664.5,
+      "lambada_ppl": 19145.2464,
+      "lambada_delta_pct": 108940.0,
+      "lambada_acc": 1.94
+    }
+  }
+}

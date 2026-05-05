@@ -1,0 +1,130 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# Extra Stuff
+gutenberg.py
+AUDIT.py
+
+# Models
+*.safetensors
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.bin
+*.h5
+*.safetensors
+*.ckpt
+*.model
+*.weights
+
+# Large Data & Matrix caches
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.parquet
+*.csv
+*.tsv
+*.jsonl
+
+# Experiment Logs
+lightning_logs/
+wandb/
+runs/
+*.log
+
+# Local virtual environments
+.venv/
+venv/
+ENV/
+env/
+# Environment variables / secrets
+.env
+.venv
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+
+# General
+.DS_Store
+Thumbs.db
+
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.pyo
+.pytest_cache/
+pytestdebug.log
+
+checkpoints/*
+!checkpoints/.gitkeep

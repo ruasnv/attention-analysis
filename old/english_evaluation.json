@@ -1,0 +1,32 @@
+{
+    "lambada_openai": {
+        "Baseline": 32.56,
+        "LoRA": 33.69,
+        "Pure-PAFT": 33.3,
+        "Hybrid-PAFT": 32.78
+    },
+    "winogrande": {
+        "Baseline": 51.62,
+        "LoRA": 50.99,
+        "Pure-PAFT": 51.62,
+        "Hybrid-PAFT": 50.99
+    },
+    "piqa": {
+        "Baseline": 62.51,
+        "LoRA": 62.79,
+        "Pure-PAFT": 62.79,
+        "Hybrid-PAFT": 62.13
+    },
+    "arc_easy": {
+        "Baseline": 39.48,
+        "LoRA": 39.98,
+        "Pure-PAFT": 40.03,
+        "Hybrid-PAFT": 39.48
+    },
+    "hellaswag": {
+        "Baseline": 31.14,
+        "LoRA": 31.04,
+        "Pure-PAFT": 31.12,
+        "Hybrid-PAFT": 31.02
+    }
+}

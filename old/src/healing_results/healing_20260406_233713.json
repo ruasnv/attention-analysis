@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "model": "gpt2",
+    "timestamp": "20260406_233713",
+    "device": "cuda",
+    "phases": [
+      4
+    ],
+    "ft_steps": 2000,
+    "lr": 2e-05
+  },
+  "baseline": {
+    "label": "baseline",
+    "wt2_ppl": 24.3561,
+    "lambada_acc": 46.67,
+    "hellaswag_acc": 35.0,
+    "eval_seconds": 78.8
+  },
+  "phase4": {
+    "experiment": "4.0_frankenstein",
+    "wv_layers": [
+      0,
+      10
+    ],
+    "wo_layers": [
+      8
+    ],
+    "ft_steps": 2000,
+    "pre_ft": {
+      "label": "frankenstein_pre_ft",
+      "wt2_ppl": 48.7661,
+      "lambada_acc": 45.35,
+      "hellaswag_acc": 34.8,
+      "eval_seconds": 76.0
+    },
+    "post_ft": {
+      "label": "frankenstein_post_ft",
+      "wt2_ppl": 29.2858,
+      "lambada_acc": 46.26,
+      "hellaswag_acc": 35.0,
+      "eval_seconds": 76.8
+    },
+    "deltas_vs_baseline": {
+      "wt2_pre": 100.22,
+      "wt2_post": 20.24,
+      "lmda_pre": -2.83,
+      "lmda_post": -0.88
+    }
+  }
+}

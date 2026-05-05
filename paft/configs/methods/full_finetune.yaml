@@ -1,0 +1,41 @@
+# ============================================================
+# methods/baselines/full_finetune.yaml
+# Upper bound baseline. All weights are trainable.
+# No decomposition is performed.
+# ============================================================
+
+extends: base
+
+method:
+  name: full_finetune
+  description: >
+    All model parameters are unfrozen and trained directly.
+    Serves as the performance upper bound. No geometric
+    structure is imposed or preserved.
+
+  decompose: false                   # do not run polar decomposition
+
+  freeze:
+    Q_V: false
+    Q_O: false
+    W_Q: false
+    W_K: false
+    W_V: false
+    W_O: false
+    mlp_weights: false
+    mlp_biases: false
+    attention_biases: false
+    layernorm_weight: false
+    layernorm_bias: false
+    embedding: false
+
+  tune:
+    all: true
+
+  paft_specific:
+    constrain_S_symmetric: false
+    freeze_eigenvectors: false
+    rotation_drift_penalty: null
+    track_rotation_drift: false      # no Q to track drift against
+
+  approximate_trainable_params: 117_000_000   # GPT-2 small

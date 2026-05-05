@@ -1,0 +1,211 @@
+{
+    "meta": {
+        "model": "gpt2",
+        "timestamp": "20260328_233945",
+        "device": "cuda",
+        "n_chunks": 128,
+        "chunk_length": 1024,
+        "v_layer": 0,
+        "qk_layer": 11,
+        "pmi_window": 5,
+        "pmi_min_count": 2,
+        "reg_eps": 0.0001,
+        "baseline_wt2_ppl": 24.3561,
+        "baseline_lambada_ppl": 17.558,
+        "baseline_lambada_acc": 46.67
+    },
+    "theoretical_basis": {
+        "Wv_claim": "W_v is an isometric operator. Polar rotation Q carries all functional information. Training left W_v near-random-orthogonal (0 MP outliers in layers 7-11). Any isometry close to W_v's principal axes should approximate its function.",
+        "G_claim": "G implements representation-space PMI. PMI predicts G's sign structure (indefinite signature, psd_frac 0.47). Rank correlation |G_eigs| vs |G_pmi_eigs| = 0.96. Training amplifies PMI directions by 5.56x on average. The 5.56x amplification is what statistical operators cannot recover."
+    },
+    "surgery_meta": {
+        "wv_polar_q": {
+            "sv_max": 1.6106114387512207,
+            "sv_min": 1.6106112003326416
+        },
+        "wv_pca_proc": {
+            "sv_max": 1.610617995262146,
+            "sv_min": 1.610605239868164
+        },
+        "wv_pca_raw": {
+            "sv_max": 1.6106147766113281,
+            "sv_min": 1.6106085777282715
+        },
+        "g_alignment": {
+            "g_pmi_layer": [
+                0.04678501561284065,
+                29.51579366977115,
+                0.51953125
+            ]
+        },
+        "g_pmi_activation": {
+            "sv_max": 27.103171521676515,
+            "sv_min": 6.462648785481112e-06,
+            "psd_frac": 0.83984375,
+            "G_raw_norm": 28.834044976903215,
+            "G_orig_norm": 424.4682480245222,
+            "scale_applied": 3.8368058059996057
+        },
+        "g_pmi_layer": {
+            "sv_max": 14029357.0,
+            "sv_min": 2.646414279937744,
+            "psd_frac": 0.51953125,
+            "G_raw_norm": 14039793.485360717,
+            "G_orig_norm": 424.4682480245222,
+            "scale_applied": 0.0054984748703116705
+        },
+        "g_pmi_activation_proc": {
+            "sv_max": 27.103172302246094,
+            "sv_min": 6.462357760028681e-06,
+            "psd_frac": 0.4973958333333333,
+            "G_raw_norm": 28.834049820968737,
+            "G_orig_norm": 424.4682480245222,
+            "scale_applied": 3.8368054837115535
+        },
+        "g_pmi_layer_proc": {
+            "sv_max": 14029361.0,
+            "sv_min": 2.6516129970550537,
+            "psd_frac": 0.4986979166666667,
+            "G_raw_norm": 14039797.288013179,
+            "G_orig_norm": 424.4682480245222,
+            "scale_applied": 0.005498474125685876
+        }
+    },
+    "results": [
+        {
+            "name": "baseline",
+            "section": "control",
+            "target": "none",
+            "wt2_ppl": 24.3561,
+            "wt2_delta_pct": 0.0,
+            "lambada_ppl": 17.558,
+            "lambada_delta_pct": 0.0,
+            "lambada_acc": 46.67,
+            "saved_to": null
+        },
+        {
+            "name": "wv_identity",
+            "wt2_ppl": 24.3561,
+            "wt2_delta_pct": 0.0,
+            "lambada_ppl": 17.558,
+            "lambada_delta_pct": 0.0,
+            "lambada_acc": 46.67,
+            "saved_to": "phase3_results\\20260328_233945\\wv_identity",
+            "section": "control"
+        },
+        {
+            "name": "g_identity",
+            "wt2_ppl": 24.3561,
+            "wt2_delta_pct": 0.0,
+            "lambada_ppl": 17.558,
+            "lambada_delta_pct": 0.0,
+            "lambada_acc": 46.67,
+            "saved_to": "phase3_results\\20260328_233945\\g_identity",
+            "section": "control"
+        },
+        {
+            "name": "wv_random_null",
+            "wt2_ppl": 649.5095,
+            "wt2_delta_pct": 2566.72,
+            "lambada_ppl": 318.6155,
+            "lambada_delta_pct": 1714.65,
+            "lambada_acc": 27.17,
+            "saved_to": "phase3_results\\20260328_233945\\wv_random_null",
+            "section": "control"
+        },
+        {
+            "name": "g_random_null",
+            "wt2_ppl": 26.8099,
+            "wt2_delta_pct": 10.07,
+            "lambada_ppl": 29.3316,
+            "lambada_delta_pct": 67.06,
+            "lambada_acc": 40.81,
+            "saved_to": "phase3_results\\20260328_233945\\g_random_null",
+            "section": "control"
+        },
+        {
+            "name": "wv_polar_q",
+            "wt2_ppl": 30.6654,
+            "wt2_delta_pct": 25.9,
+            "lambada_ppl": 15.3195,
+            "lambada_delta_pct": -12.75,
+            "lambada_acc": 48.69,
+            "saved_to": "phase3_results\\20260328_233945\\wv_polar_q",
+            "section": "wv_surgery",
+            "target": "wv",
+            "layer": 0
+        },
+        {
+            "name": "wv_pca_proc",
+            "wt2_ppl": 30.6654,
+            "wt2_delta_pct": 25.9,
+            "lambada_ppl": 15.3195,
+            "lambada_delta_pct": -12.75,
+            "lambada_acc": 48.69,
+            "saved_to": "phase3_results\\20260328_233945\\wv_pca_proc",
+            "section": "wv_surgery",
+            "target": "wv",
+            "layer": 0
+        },
+        {
+            "name": "wv_pca_raw",
+            "wt2_ppl": 86.1201,
+            "wt2_delta_pct": 253.59,
+            "lambada_ppl": 65.2332,
+            "lambada_delta_pct": 271.53,
+            "lambada_acc": 34.31,
+            "saved_to": "phase3_results\\20260328_233945\\wv_pca_raw",
+            "section": "wv_surgery",
+            "target": "wv",
+            "layer": 0
+        },
+        {
+            "name": "g_pmi_activation",
+            "wt2_ppl": 26.4863,
+            "wt2_delta_pct": 8.75,
+            "lambada_ppl": 31.3481,
+            "lambada_delta_pct": 78.54,
+            "lambada_acc": 39.9,
+            "saved_to": "phase3_results\\20260328_233945\\g_pmi_activation",
+            "section": "g_surgery",
+            "target": "g",
+            "layer": 11
+        },
+        {
+            "name": "g_pmi_layer",
+            "wt2_ppl": 26.4887,
+            "wt2_delta_pct": 8.76,
+            "lambada_ppl": 31.531,
+            "lambada_delta_pct": 79.58,
+            "lambada_acc": 39.72,
+            "saved_to": "phase3_results\\20260328_233945\\g_pmi_layer",
+            "section": "g_surgery",
+            "target": "g",
+            "layer": 11
+        },
+        {
+            "name": "g_pmi_activation_proc",
+            "wt2_ppl": 29.8091,
+            "wt2_delta_pct": 22.39,
+            "lambada_ppl": 27.84,
+            "lambada_delta_pct": 58.56,
+            "lambada_acc": 41.78,
+            "saved_to": "phase3_results\\20260328_233945\\g_pmi_activation_proc",
+            "section": "g_surgery",
+            "target": "g",
+            "layer": 11
+        },
+        {
+            "name": "g_pmi_layer_proc",
+            "wt2_ppl": 29.8906,
+            "wt2_delta_pct": 22.72,
+            "lambada_ppl": 31.0003,
+            "lambada_delta_pct": 76.56,
+            "lambada_acc": 40.02,
+            "saved_to": "phase3_results\\20260328_233945\\g_pmi_layer_proc",
+            "section": "g_surgery",
+            "target": "g",
+            "layer": 11
+        }
+    ]
+}

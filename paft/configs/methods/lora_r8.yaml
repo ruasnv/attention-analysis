@@ -1,0 +1,51 @@
+# ============================================================
+# methods/baselines/lora_r8.yaml
+# Low-Rank Adaptation, rank 8.
+# Primary lightweight PEFT competitor.
+# Reference: Hu et al. 2022.
+# ============================================================
+
+extends: base
+
+method:
+  name: lora_r8
+  description: >
+    LoRA with rank 8 applied to all attention weight matrices
+    (W_Q, W_K, W_V, W_O). Adds trainable low-rank decomposition
+    delta_W = B @ A where A is (r x d) and B is (d x r).
+    Primary parameter-efficiency competitor to PAFT. Note that
+    LoRA has no geometric grounding — delta_W is unconstrained
+    in direction.
+
+  decompose: false                  # LoRA does not use polar decomposition
+
+  freeze:
+    W_Q: true                       # base weights frozen — LoRA adds delta on top
+    W_K: true
+    W_V: true
+    W_O: true
+    mlp_weights: true
+    mlp_biases: true
+    attention_biases: true
+    layernorm_weight: true
+    layernorm_bias: true
+    embedding: true
+
+  lora:
+    rank: 8
+    alpha: 16                       # scaling factor — alpha/rank = 2.0
+    dropout: 0.05
+    target_modules:                 # which weight matrices get LoRA adapters
+      - W_Q
+      - W_K
+      - W_V
+      - W_O
+    bias: none                      # do not train biases
+
+  paft_specific:
+    constrain_S_symmetric: false
+    freeze_eigenvectors: false
+    rotation_drift_penalty: null
+    track_rotation_drift: false
+
+  approximate_trainable_params: 294_912   # 4 matrices * 12 layers * 2 * rank * dim

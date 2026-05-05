@@ -1,0 +1,110 @@
+{
+    "english_web": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 3.3209,
+            "Model_Path": "N/A"
+        },
+        "Standard-FT": {
+            "WT2_PPL": 27.052,
+            "Target_Loss": 3.2357,
+            "Model_Path": "./models/english_web_standard_ft"
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 25.6602,
+            "Target_Loss": 3.2511,
+            "Model_Path": "./models/english_web_pure_paft"
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 26.0015,
+            "Target_Loss": 3.2331,
+            "Model_Path": "./models/english_web_hybrid_paft"
+        },
+        "LoRA": {
+            "WT2_PPL": 25.2301,
+            "Target_Loss": 3.2796,
+            "Model_Path": "./models/english_web_lora"
+        }
+    },
+    "python": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 1.9582,
+            "Model_Path": "N/A"
+        },
+        "Standard-FT": {
+            "WT2_PPL": 37.5727,
+            "Target_Loss": 1.4471,
+            "Model_Path": "./models/python_standard_ft"
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 26.3937,
+            "Target_Loss": 1.5006,
+            "Model_Path": "./models/python_pure_paft"
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 27.7549,
+            "Target_Loss": 1.4572,
+            "Model_Path": "./models/python_hybrid_paft"
+        },
+        "LoRA": {
+            "WT2_PPL": 25.1242,
+            "Target_Loss": 1.5635,
+            "Model_Path": "./models/python_lora"
+        }
+    },
+    "legal": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 2.9302,
+            "Model_Path": "N/A"
+        },
+        "Standard-FT": {
+            "WT2_PPL": 31.3948,
+            "Target_Loss": 2.924,
+            "Model_Path": "./models/legal_standard_ft"
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 25.6092,
+            "Target_Loss": 2.8582,
+            "Model_Path": "./models/legal_pure_paft"
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 27.0488,
+            "Target_Loss": 2.8978,
+            "Model_Path": "./models/legal_hybrid_paft"
+        },
+        "LoRA": {
+            "WT2_PPL": 24.8434,
+            "Target_Loss": 2.8523,
+            "Model_Path": "./models/legal_lora"
+        }
+    },
+    "medical": {
+        "Baseline": {
+            "WT2_PPL": 25.1704,
+            "Accuracy": 0.49,
+            "Model_Path": "N/A"
+        },
+        "Standard-FT": {
+            "WT2_PPL": 82.5464,
+            "Accuracy": 0.45,
+            "Model_Path": "./models/medical_standard_ft"
+        },
+        "Pure-PAFT": {
+            "WT2_PPL": 33.6322,
+            "Accuracy": 0.46,
+            "Model_Path": "./models/medical_pure_paft"
+        },
+        "Hybrid-PAFT": {
+            "WT2_PPL": 60.007,
+            "Accuracy": 0.46,
+            "Model_Path": "./models/medical_hybrid_paft"
+        },
+        "LoRA": {
+            "WT2_PPL": 25.9955,
+            "Accuracy": 0.49,
+            "Model_Path": "./models/medical_lora"
+        }
+    }
+}

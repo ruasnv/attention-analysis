@@ -1,0 +1,44 @@
+# ============================================================
+# methods/baselines/frozen.yaml
+# Lower bound baseline. Nothing is trained.
+# Pure zero-shot evaluation of the pretrained model.
+# ============================================================
+
+extends: base
+
+method:
+  name: frozen
+  description: >
+    All model parameters are frozen. No training occurs.
+    Evaluates the pretrained model directly on each domain.
+    Serves as the zero-shot lower bound for all comparisons.
+
+  decompose: false
+
+  freeze:
+    Q_V: true
+    Q_O: true
+    W_Q: true
+    W_K: true
+    W_V: true
+    W_O: true
+    mlp_weights: true
+    mlp_biases: true
+    attention_biases: true
+    layernorm_weight: true
+    layernorm_bias: true
+    embedding: true
+
+  tune:
+    all: false
+
+  paft_specific:
+    constrain_S_symmetric: false
+    freeze_eigenvectors: false
+    rotation_drift_penalty: null
+    track_rotation_drift: false
+
+  training:
+    num_epochs: 0                    # override — no training steps run
+
+  approximate_trainable_params: 0

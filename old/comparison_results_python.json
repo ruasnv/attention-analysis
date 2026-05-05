@@ -1,0 +1,83 @@
+{
+    "config": {
+        "task": "python",
+        "steps": 1000,
+        "lr": 2e-05,
+        "device": "cuda",
+        "model": "gpt2"
+    },
+    "results": {
+        "Baseline": {
+            "Source": "pretrained",
+            "Trainable_Params": 0,
+            "Total_Params": 124439808,
+            "Param_Pct": 0.0,
+            "WT2_PPL": 25.1704,
+            "Target_Loss": 1.9582,
+            "Latency_ms": 6.6572
+        },
+        "Standard-FT": {
+            "Source": "cached (python_standard_ft_step1000)",
+            "Trainable_Params": 124439808,
+            "Total_Params": 124439808,
+            "Param_Pct": 100.0,
+            "WT2_PPL": 37.5727,
+            "Target_Loss": 1.4471,
+            "Latency_ms": 6.7405
+        },
+        "BitFit": {
+            "Source": "trained+saved",
+            "Trainable_Params": 102144,
+            "Total_Params": 124439808,
+            "Param_Pct": 0.08,
+            "WT2_PPL": 26.0319,
+            "Target_Loss": 1.6431,
+            "Latency_ms": 4.6439
+        },
+        "LoRA": {
+            "Source": "cached (python_lora_step1000)",
+            "Trainable_Params": 0,
+            "Total_Params": 124734720,
+            "Param_Pct": 0.0,
+            "WT2_PPL": 25.1242,
+            "Target_Loss": 1.5635,
+            "Latency_ms": 5.5413
+        },
+        "IA3": {
+            "Source": "trained+saved",
+            "Trainable_Params": 73728,
+            "Total_Params": 124513536,
+            "Param_Pct": 0.06,
+            "WT2_PPL": 24.8564,
+            "Target_Loss": 1.7573,
+            "Latency_ms": 10.4936
+        },
+        "SVF": {
+            "Source": "trained+saved",
+            "Trainable_Params": 120576,
+            "Total_Params": 96146688,
+            "Param_Pct": 0.13,
+            "WT2_PPL": 26.0026,
+            "Target_Loss": 1.64,
+            "Latency_ms": 18.8963
+        },
+        "Pure-PAFT": {
+            "Source": "cached (python_pure_paft_step1000)",
+            "Trainable_Params": 14257920,
+            "Total_Params": 110284032,
+            "Param_Pct": 12.93,
+            "WT2_PPL": 26.3937,
+            "Target_Loss": 1.5006,
+            "Latency_ms": 14.3606
+        },
+        "OFT": {
+            "Source": "trained+saved",
+            "Trainable_Params": 7934976,
+            "Total_Params": 132374784,
+            "Param_Pct": 5.99,
+            "WT2_PPL": 29.5433,
+            "Target_Loss": 1.4764,
+            "Latency_ms": 15.9433
+        }
+    }
+}
